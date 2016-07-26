@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftGameOne" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,100 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startBg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="scG-jO-eDc">
+                                <rect key="frame" x="0.0" y="20" width="608" height="580"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFR-oU-cl8">
+                                <rect key="frame" x="250" y="420" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Adz-Jg-nF8"/>
+                                    <constraint firstAttribute="height" constant="50" id="iol-Tz-azp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="开始游戏">
+                                    <color key="titleColor" red="0.96015396880000003" green="0.9669637163" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="StartGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WG2-8a-xJa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="scG-jO-eDc" secondAttribute="bottom" id="Bls-qJ-bD1"/>
+                            <constraint firstItem="scG-jO-eDc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Pfm-Mc-Sd7"/>
+                            <constraint firstItem="scG-jO-eDc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RhT-X8-8dn"/>
+                            <constraint firstAttribute="trailing" secondItem="scG-jO-eDc" secondAttribute="trailingMargin" id="asC-iL-jKf"/>
+                            <constraint firstItem="rFR-oU-cl8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="axl-FV-Gl3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rFR-oU-cl8" secondAttribute="bottom" constant="130" id="xXj-Oi-Yrk"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Start View Controller-->
+        <scene sceneID="Ev9-pV-lgB">
+            <objects>
+                <viewController storyboardIdentifier="StartViewController" id="Ci0-Ni-plY" customClass="StartViewController" customModule="SwiftGameOne" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZPh-tS-CO2"/>
+                        <viewControllerLayoutGuide type="bottom" id="e9N-A7-5Bo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JHc-n1-17d">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gck-7X-CDH">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWI-dZ-cZf">
+                                <rect key="frame" x="26" y="28" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="7VV-Zl-LWG"/>
+                                    <constraint firstAttribute="height" constant="40" id="wHk-EM-kkw"/>
+                                </constraints>
+                                <state key="normal" image="back.png"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="Ci0-Ni-plY" eventType="touchUpInside" id="eay-ly-Mng"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZQ-Dz-ETR">
+                                <rect key="frame" x="260" y="48" width="80" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="1S1-oD-YqW"/>
+                                    <constraint firstAttribute="height" constant="20" id="Gix-l8-d5P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gck-7X-CDH" firstAttribute="width" secondItem="JHc-n1-17d" secondAttribute="width" id="2oH-9o-H60"/>
+                            <constraint firstItem="Gck-7X-CDH" firstAttribute="centerY" secondItem="JHc-n1-17d" secondAttribute="centerY" id="DS4-gD-FDA"/>
+                            <constraint firstItem="Gck-7X-CDH" firstAttribute="centerX" secondItem="JHc-n1-17d" secondAttribute="centerX" id="XBb-9i-fe5"/>
+                            <constraint firstItem="Gck-7X-CDH" firstAttribute="height" secondItem="JHc-n1-17d" secondAttribute="height" id="ehf-gx-2cr"/>
+                            <constraint firstItem="zWI-dZ-cZf" firstAttribute="leading" secondItem="JHc-n1-17d" secondAttribute="leadingMargin" constant="6" id="eiO-VK-cSm"/>
+                            <constraint firstItem="zWI-dZ-cZf" firstAttribute="top" secondItem="ZPh-tS-CO2" secondAttribute="bottom" constant="8" id="hYP-y5-cFX"/>
+                            <constraint firstItem="RZQ-Dz-ETR" firstAttribute="top" secondItem="ZPh-tS-CO2" secondAttribute="bottom" constant="27" id="iFx-Gc-zdU"/>
+                            <constraint firstItem="RZQ-Dz-ETR" firstAttribute="centerX" secondItem="JHc-n1-17d" secondAttribute="centerX" id="prr-X4-TH0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="score" destination="RZQ-Dz-ETR" id="yTm-Fi-GOV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SWP-30-ZfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="339"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="back.png" width="38" height="41"/>
+        <image name="bg.jpg" width="640" height="960"/>
+        <image name="startBg.jpg" width="384" height="640"/>
+    </resources>
 </document>
